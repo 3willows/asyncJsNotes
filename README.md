@@ -1,12 +1,13 @@
-## AIM:
+## Aim
 
-Implement a coin flip game to pracise Javascript asynchronous programming
+- Implement a coin flip game to pracise Javascript asynchronous programming
+- Leave enough documentation so that I can remind myself of the basics later.
 
-## GAME TO BE IMPLEMENTED
+## Game to be implemented
 
 Flip a coin.  If the coin lands on "heads", keep flipping.  End on the first "tails"
 
-## IMPLEMENTATINOS SO FAR
+## Implementations so far
 
 - [x] Callbacks with 1 parameter
 - [x] Callbacks with 2 parameters (error, result) 
