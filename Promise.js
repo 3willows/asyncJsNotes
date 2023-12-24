@@ -27,20 +27,20 @@ const trial = () => {
 // Promises can be chained together
 // Res and reject can be used to pass a message
 
-// trial()
-//   .then(res => {
-//     console.log(res + ' (first go)')
-//     return trial()
-//   })
-//   .then(res => {
-//     console.log(res + ' (second go)')
-//     return trial()
-//   })
-//   .then(res => {
-//     console.log(res + ' (third go).  You win!')
-//     return trial()
-//   })
-//   .catch(err => console.log(`${err} it's over`))
+trial()
+  .then(res => {
+    console.log(res + ' (first go)')
+    return trial()
+  })
+  .then(res => {
+    console.log(res + ' (second go)')
+    return trial()
+  })
+  .then(res => {
+    console.log(res + ' (third go).  You win!')
+    return trial()
+  })
+  .catch(err => console.log(`${err} it's over`))
 
 async function repeatTrial () {
   await trial()
