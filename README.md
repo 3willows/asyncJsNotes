@@ -1,14 +1,16 @@
 ## AIM:
 
-Practise different forms of JS Async syntax by implementing a coin flip game.
+Implement a coin flip game to pracise Javascript asynchronous programming
 
--[ ] Callbacks with 1 parameter
--[ ] Callbacks with 2 parameters (error, result) 
--[ ] Callbacks with 3 parameters (error, result, next) 
--[ ] Promises
--[ ] Async await
--[ ] Axios
+## GAME TO BE IMPLEMENTED
 
-## RULES OF THE GAME: 
+Flip a coin.  If the coin lands on "heads", keep flipping.  End on the first "tails"
 
-Flip a coin.  If the coin lands on "heads", keep flipping.  IF the coin lands on tails, end.
+## IMPLEMENTATINOS SO FAR
+
+- [x] Callbacks with 1 parameter
+- [x] Callbacks with 2 parameters (error, result) 
+- [x] Callbacks with 3 parameters (error, result, next) 
+- [x] Promises
+- [ ] Async await
+- [ ] Axios
