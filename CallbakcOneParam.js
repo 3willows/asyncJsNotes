@@ -1,4 +1,5 @@
 //  Single Param Callback
+
 const trial = callback => {
   let random = Math.random()
   let result
@@ -38,64 +39,6 @@ const loop = () => {
 }
 
 for (let i = 0; i < 5; i++) {
+  console.log("START A ROUND")
   loop()
 }
-
-//  Two Params Callback
-
-// function trial2 (callback) {
-//   let random = Math.random()
-//   if (random > 0.5) {
-//     callback(null, 'heads')
-//   } else {
-//     callback('tails', null)
-//   }
-// }
-
-// // Call once
-
-// trial2((less, more) => {
-//   if (less) {
-//     console.log(less)
-//     return
-//   }
-//   console.log(more)
-// })
-
-// // Nested call
-
-// trial2((less, more) => {
-//   if (less) {
-//     console.log(less)
-//     return
-//   }
-//   console.log(more)
-// })
-// trial2((nestedLess, nestedMore) => {
-//   if (nestedLess) {
-//     console.log(nestedLess)
-//     return
-//   }
-//   console.log(nestedMore)
-// })
-
-// //  Three Params Callback
-
-// function trial3 (callback) {
-//   let random = Math.random()
-//   if (random > 0.5) {
-//     callback(null, 'more than half')
-//   } else {
-//     callback('less than half', null)
-//   }
-// }
-
-// trial3((less, more, next) => {
-//   if (less) {
-//     console.log(less)
-//     return
-//   }
-//   else{
-//   console.log(more)
-//   }
-// })

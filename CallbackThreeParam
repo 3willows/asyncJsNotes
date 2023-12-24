@@ -1,0 +1,20 @@
+// //  Three Params Callback
+
+// function trial3 (callback) {
+//   let random = Math.random()
+//   if (random > 0.5) {
+//     callback(null, 'more than half')
+//   } else {
+//     callback('less than half', null)
+//   }
+// }
+
+// trial3((less, more, next) => {
+//   if (less) {
+//     console.log(less)
+//     return
+//   }
+//   else{
+//   console.log(more)
+//   }
+// })
