@@ -1,15 +1,15 @@
 //Run in a JS playground 
 
-// Promise demonstration
+// Promise intro 
 
 const trial = () => {
   const random = Math.random();
   return new Promise((resolve, reject) =>{
     if (random > 0.5){
-      resolve('more than half!')
+      resolve('heads!!')
     }
     else
-    reject('less than half!')
+    reject('tails!!')
   })
 }
 
@@ -31,16 +31,15 @@ const trial = () => {
 
 trial()
   .then(la => {
-    console.log(la + ' success 1!')
+    console.log(la + ' (first go)')
     return trial()
   })
   .then(res => {
-    console.log(res + ' success 2!')
+    console.log(res + ' (second go)')
     return trial()
   })
   .then(res => {
-    console.log(res + ' success 3!')
+    console.log(res + ' (third go).  You win!')
     return trial()
   })
-  .catch(err => console.log(err + ' at some point'))
-
+  .catch(err => console.log(`${err} it's over`))
