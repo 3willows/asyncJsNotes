@@ -14,4 +14,3 @@ Flip a coin.  If the coin lands on "heads", keep flipping.  End on the first "ta
 - [x] Callbacks with 3 parameters (error, result, next) 
 - [x] Promises
 - [ ] Async await
-- [ ] Axios
