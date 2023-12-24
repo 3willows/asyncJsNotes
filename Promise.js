@@ -1,19 +1,17 @@
-//Run in a JS playground 
+//Run in a JS playground
 
-// Promise intro 
+// Promise intro
 
 const trial = () => {
-  const random = Math.random();
-  return new Promise((resolve, reject) =>{
-    if (random > 0.5){
+  const random = Math.random()
+  return new Promise((resolve, reject) => {
+    if (random > 0.5) {
       resolve('heads!!')
-    }
-    else
-    reject('tails!!')
+    } else reject('tails!!')
   })
 }
 
-// each call iniitates new promise, 
+// each call iniitates new promise,
 // so some may be rejected and some accepted
 
 // let a = trial()
@@ -29,17 +27,42 @@ const trial = () => {
 // Promises can be chained together
 // Res and reject can be used to pass a message
 
-trial()
-  .then(la => {
-    console.log(la + ' (first go)')
-    return trial()
-  })
-  .then(res => {
-    console.log(res + ' (second go)')
-    return trial()
-  })
-  .then(res => {
-    console.log(res + ' (third go).  You win!')
-    return trial()
-  })
-  .catch(err => console.log(`${err} it's over`))
+// trial()
+//   .then(res => {
+//     console.log(res + ' (first go)')
+//     return trial()
+//   })
+//   .then(res => {
+//     console.log(res + ' (second go)')
+//     return trial()
+//   })
+//   .then(res => {
+//     console.log(res + ' (third go).  You win!')
+//     return trial()
+//   })
+//   .catch(err => console.log(`${err} it's over`))
+
+async function repeatTrial () {
+  await trial()
+    .then(res => {
+      console.log(res + ' (first go)')
+      return trial()
+    })
+    .then(res => {
+      console.log(res + ' (second go)')
+      return trial()
+    })
+    .then(res => {
+      console.log(res + ' (third go).  You win!')
+      return trial()
+    })
+    .catch(err => console.log(`${err} it's over`))
+}
+
+const loop = async () =>{
+  for (let i = 0; i < 10; i++) {
+    console.log('STARTING A ROUND')
+    await repeatTrial()
+}}
+
+loop()
