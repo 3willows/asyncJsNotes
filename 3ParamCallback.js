@@ -28,3 +28,18 @@ for (let i = 0; i < 100; i++) {
   console.log('START A ROUND')
   trial3(simpleNextReturn)
 }
+
+// break down
+
+// const repeatTrial = () => {
+//   trial3((err, res, trial3) => {
+//     if (res) {
+//       console.log(res)
+//       trial3(simpleNextReturn)
+//     } else {
+//       console.log(err)
+//     }
+//   })
+// }
+
+// repeatTrial()
