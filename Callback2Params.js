@@ -19,7 +19,7 @@ const simpleReturn = (err, res) => {
 
 // console.log(trial2(simpleReturn))
 
-// Try to make recursive
+// Make recursive
 
 function trial2R (callback) {
   let random = Math.random()
