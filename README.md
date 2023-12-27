@@ -1,6 +1,6 @@
 ## Aim
 
-- Implement a coin flip game to pracise Javascript asynchronous programming
+- Implement a coin flip game to practise Javascript asynchronous programming
 - Leave enough documentation so that I can remind myself of the basics later.
 
 ## Game to be implemented
