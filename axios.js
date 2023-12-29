@@ -3,39 +3,25 @@
 // console.log("type of axios is", typeof axios, axios)
 
 // Make a request for a user with a given ID
-axios
-  .get('https://catfact.ninja/fact')
-  .then(function (response) {
-    // handle success; in other words already prased JSON and made a JS object
-    console.log(`RESPONSE HERE: ${JSON.stringify(response.data)}`)
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error)
-  })
-  .finally(function () {
-    // always executed
-    console.log('alawys here for you!')
-  })
 
-// Optionally the request above could also be done as
-// axios
-//   .get('/user', {
-//     params: {
-//       ID: 12345
-//     }
-//   })
-//   .then(function (response) {
-//     console.log(response)
-//   })
-//   .catch(function (error) {
-//     console.log(error)
-//   })
-//   .finally(function () {
-//     // always executed
-//   })
+function wrapper () {
+  axios
+    .get('https://catfact.ninja/fact')
+    .then(function (response) {
+      // handle success; in other words already prased JSON and made a JS object
+      console.log(`RESPONSE HERE: ${JSON.stringify(response.data)}`)
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error)
+    })
+    .finally(function () {
+      // always executed
+      console.log('alawys here for you!')
+    })
+}
 
-// Want to use async/await? Add the `async` keyword to your outer function/method.
+// wrapper()
 
 async function catFact () {
   try {
@@ -50,6 +36,32 @@ async function catFact () {
   }
 }
 
-catFact()
+// catFact()
 
-// Sometimes catFact finishes first, sometimes the earlier axios.get('https://catfact.ninja/fact') finishes first!!!  Go figure!
+// Sometimes catFact finishes first, sometimes wrapper finishes first!!!  Go figure!  Maybe the only way to ensure one after the other is to chain them in some kind of .then or async function
+
+const getDadJoke = async () => {
+  try {
+    const config = {
+      headers: {
+        Accept: 'application/json'
+      }
+    }
+    const response = await axios.get('https://icanhazdadjoke.com/', config)
+    // console.log(response)
+    return response.data.joke
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+const button = document.querySelector('button')
+const ul = document.querySelector('ul')
+
+button.addEventListener('click', async () => {
+  console.log('hi, hold on and let the bullets fly!')
+  console.log(await getDadJoke())
+  const newLi = document.createElement('li')
+  newLi.innerText = await getDadJoke()
+  ul.appendChild(newLi)
+})
