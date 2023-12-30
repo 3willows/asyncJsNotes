@@ -68,10 +68,9 @@ const ul = document.querySelector('ul')
 
 const form = document.querySelector('#searchform')
 form.addEventListener('submit', async function (e) {
-  const allImages = document.getElementsByTagName('img')
-
-  while (allImages.length > 0) {
-    allImages[0].parentNode.removeChild(allImages[0])
+  const allDiv = document.querySelectorAll('div')
+  while (allDiv.length > 0) {
+    allDiv[0].parentNode.removeChild(allDiv[0])
   }
 
   e.preventDefault()
@@ -89,14 +88,18 @@ form.addEventListener('submit', async function (e) {
 const makeShow = results => {
   for (let result of results) {
     console.log(result.show.name)
+    const div = document.createElement('div')
     const img = document.createElement('img')
     const name = document.createElement('p')
     if (result.show.image) {
       if (result.show.image.hasOwnProperty('medium')) {
         let newImage = result.show.image.medium
+        div.classList="inline-div"
         img.src = newImage
         name.innerText = result.show.name
-        document.body.append(img, name)
+        div.appendChild(img)
+        div.appendChild(name)
+        document.body.append(div)
       }
     }
   }
